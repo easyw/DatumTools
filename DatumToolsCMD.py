@@ -256,3 +256,45 @@ class AltLCS:
         
 FreeCADGui.addCommand('AltLCS',AltLCS())
 ##
+
+class AnnoLbl:
+    "datum tools object"
+ 
+    def GetResources(self):
+        return {'Pixmap'  : os.path.join( DatumToolsWB_icons_path , 'Annotation.svg') , # the name of a svg file available in the resources
+                     'MenuText': "Annotation Label" ,
+                     'ToolTip' : "Annotation Label\nDatumTools workbench"}
+ 
+    def IsActive(self):
+        if FreeCAD.ActiveDocument is not None:
+            import os, sys
+            return True
+ 
+    def Activated(self):
+        # do something here...
+        sel = FreeCADGui.Selection.getSelection()
+        if len (sel) == 1:
+            if 'App::Part' in sel[0].TypeId or 'PartDesign::Body' in sel[0].TypeId \
+                    or 'Part::FeaturePython' in sel[0].TypeId:
+                try:
+                    sel[0].newObject("App::AnnotationLabel","AnnoLbl")
+                    anno = FreeCAD.ActiveDocument.ActiveObject
+                    anno.LabelText = "AnnoLbl"
+                except:
+                    FreeCAD.ActiveDocument.addObject("App::AnnotationLabel","AnnoLbl")
+                    anno = FreeCAD.ActiveDocument.ActiveObject
+                    anno.LabelText = "AnnoLbl"
+            else:
+                FreeCAD.ActiveDocument.addObject("App::AnnotationLabel","AnnoLbl")
+                anno = FreeCAD.ActiveDocument.ActiveObject
+                anno.LabelText = "AnnoLbl"
+        else:
+            FreeCAD.ActiveDocument.addObject("App::AnnotationLabel","AnnoLbl")
+            anno = FreeCAD.ActiveDocument.ActiveObject
+            anno.LabelText = "AnnoLbl"
+        
+        FreeCAD.ActiveDocument.recompute()
+        #FreeCAD.Console.PrintWarning( 'Done :)\n' )
+        
+FreeCADGui.addCommand('AnnoLbl',AnnoLbl())
+##

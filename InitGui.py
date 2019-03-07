@@ -50,10 +50,10 @@ class DatumToolsWB ( Workbench ):
     
     def Initialize(self):
         
-        self.appendToolbar("Datum Tools", ["DatumPoint","DatumLine","DatumPlane","DatumLCS","AltLCS","Plane"])  #"Point","Line",
+        self.appendToolbar("Datum Tools", ["DatumPoint","DatumLine","DatumPlane","DatumLCS","AltLCS","Plane","AnnoLbl"])  #"Point","Line",
         
         #self.appendMenu("ksu Tools", ["ksuTools","ksuToolsEdit"])
-        self.appendMenu("Datum Tools", ["DatumPoint","DatumLine","DatumPlane","DatumLCS","AltLCS","Plane"])
+        self.appendMenu("Datum Tools", ["DatumPoint","DatumLine","DatumPlane","DatumLCS","AltLCS","Plane","AnnoLbl"])
         
         Log ("Loading DatumTools Module... done\n")
  
