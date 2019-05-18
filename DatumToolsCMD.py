@@ -11,6 +11,7 @@
 #*                                                                          *
 
 import FreeCAD, FreeCADGui, Part, os
+from FreeCAD import Base
 import imp, os, sys, tempfile
 import FreeCAD, FreeCADGui
 from PySide import QtGui, QtCore
