@@ -207,13 +207,13 @@ class DatumLCS:
             if 'App::Part' in sel[0].TypeId or 'PartDesign::Body' in sel[0].TypeId \
                     or 'Part::FeaturePython' in sel[0].TypeId:
                 try:
-                    sel[0].newObject('PartDesign::CoordinateSystem','LCS')
+                    sel[0].newObject('PartDesign::CoordinateSystem','Local_CS')
                 except:
-                    FreeCAD.ActiveDocument.addObject('PartDesign::CoordinateSystem','LCS')
+                    FreeCAD.ActiveDocument.addObject('PartDesign::CoordinateSystem','Local_CS')
             else:
-                FreeCAD.ActiveDocument.addObject('PartDesign::CoordinateSystem','LCS')
+                FreeCAD.ActiveDocument.addObject('PartDesign::CoordinateSystem','Local_CS')
         else:
-            FreeCAD.ActiveDocument.addObject('PartDesign::CoordinateSystem','LCS')
+            FreeCAD.ActiveDocument.addObject('PartDesign::CoordinateSystem','Local_CS')
         
         FreeCAD.ActiveDocument.recompute()
         #FreeCAD.Console.PrintWarning( 'Done :)\n' )
@@ -243,13 +243,13 @@ class AltLCS:
             if 'App::Part' in sel[0].TypeId or 'PartDesign::Body' in sel[0].TypeId \
                     or 'Part::FeaturePython' in sel[0].TypeId:
                 try:
-                    sel[0].newObject("App::Placement",'aLCS')
+                    sel[0].newObject("App::Placement",'Local_CSa')
                 except:
-                    FreeCAD.ActiveDocument.addObject("App::Placement",'aLCS')
+                    FreeCAD.ActiveDocument.addObject("App::Placement",'Local_CSa')
             else:
-                FreeCAD.ActiveDocument.addObject("App::Placement",'aLCS')
+                FreeCAD.ActiveDocument.addObject("App::Placement",'Local_CSa')
         else:
-            FreeCAD.ActiveDocument.addObject("App::Placement",'aLCS')
+            FreeCAD.ActiveDocument.addObject("App::Placement",'Local_CSa')
         
         FreeCAD.ActiveDocument.recompute()
         #FreeCAD.Console.PrintWarning( 'Done :)\n' )
