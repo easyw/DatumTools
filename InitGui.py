@@ -9,7 +9,7 @@
 #*                                                                          *
 #****************************************************************************
 
-DT_wb_version='v 1.0.0'
+DT_wb_version='v 1.0.1'
 
 import FreeCAD, FreeCADGui, Part, os, sys
 import re, time
@@ -42,7 +42,7 @@ class DatumToolsWB ( Workbench ):
     "DatumTools WB object"
     Icon = main_DTWB_Icon
     #Icon = ":Resources/icons/kicad-StepUp-tools-WB.svg"
-    MenuText = "DatumTools WB"
+    MenuText = "DatumTools"
     ToolTip = "DatumTools workbench"
  
     def GetClassName(self):
